@@ -6,9 +6,12 @@ class C_login extends CI_Controller {
     public function __construct() {
         parent::__construct();        
         $this->load->model('m_users');
-        if(!$this->m_users->login()) {
-            redirect('login');			
-        }
+
+        if($this->m_users->loginUser()) {
+			redirect('user');			
+		} elseif($this->m_users->loginAdmin()) {
+			redirect('admin');			
+		}
     }
 
 	public function index()	{
@@ -50,7 +53,7 @@ class C_login extends CI_Controller {
                 $_SESSION['loginUser'] = true;
 
                 $validator['success'] = true;
-                $validator['messages'] = 'c_user'; 
+                $validator['messages'] = 'user'; 
                                     
             } 
             

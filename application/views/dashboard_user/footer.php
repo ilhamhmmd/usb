@@ -23,7 +23,7 @@
           <div class="modal-body">Pilih "Sign out" Jika anda benar akan meninggalkan halaman ini</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Sign out</a>
+            <a class="btn btn-primary" href="<?php echo base_url('logout'); ?>">Sign out</a>
           </div>
         </div>
       </div>

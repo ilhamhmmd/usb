@@ -46,7 +46,7 @@
             return $this->db->update('login', $data);
         }
 
-        public function login() {
+        public function loginUser() {
             if(!isset($_SESSION['loginUser'])) {
                 return false;
             }

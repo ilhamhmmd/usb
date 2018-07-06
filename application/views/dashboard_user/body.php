@@ -3,7 +3,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="<?php echo base_url('user'); ?>">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Dashboard User</li>
       </ol>
@@ -17,7 +17,7 @@
 			</div>
 	</div><br>
 	 <div class="container text-left">
-	 	<h5>Anda Masuk Sebagai :</h5><?php var_dump($user); ?>
+	 	<h5 class="text-center font-weight-bold">Anda Masuk Sebagai :</h5><br>
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -30,11 +30,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>00001</td>
-                  <td>Bambang Sukamto</td>
-                  <td>Jalan Sayur No. 2</td>
-                  <td>Laki-Laki</td>
-                  <td>Polisi</td>
+                  <td><?= $user['nik'] ?></td>
+                  <td><?= $user['nama'] ?></td>
+                  <td><?= $user['alamat'] ?></td>
+                  <td><?= $user['jenis_kelamin'] ?></td>
+                  <td><?= $user['pekerjaan'] ?></td>
                 </tr>
               </tbody>
     
