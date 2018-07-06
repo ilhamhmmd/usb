@@ -11,20 +11,22 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/login/bootstrap-4.1.1/dist/css/bootstrap.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/custom/loading.css') ?>" type="text/css">
     
   </head>
 
   <body>
     <form class="form-signin" action="c_login/login" method="post" id="loginForm">
       <div class="text-center mb-4">
-        <h3 class="h3 mb-3 font-weight-normal">Login</h3>
-		 <img class="text-center" src="<?php echo base_url('assets/images/Man.png') ?>" alt="" width="90" height="90">
-		<br>
-		<code>Gunakan NIK yang telah anda registrasikan sebelumnya</code>
-		<br>
-		 <a >Anda belum terdaftar ?</a>
-		 <a href="<?php echo base_url('registrasi') ?>">(klik disini)</a></p>
-      </div>
+        <h3 class="h2 mb-3 font-weight-bold">Login</h3>
+		    <img class="text-center" src="<?php echo base_url('assets/images/Man.png') ?>" alt="" width="90" height="90"><br>
+        <a >Anda belum terdaftar ?</a><br>
+		    <a href="<?php echo base_url('registrasi') ?>">(klik disini)</a></p>      
+     </div>    
+      <div class="alert alert-warning">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Gunakan NIK yang telah anda registrasi & verifikasikan sebelumnya
+      </div><hr><br>
 
       <div class="form-label-group">
         <input type="text" id="nik" name="nik" class="form-control" placeholder="Nomor Induk Kependudukan" autofocus>
@@ -32,8 +34,8 @@
       </div>
 
       <div class="form-label-group">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi">
-        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+        <label for="password">Password</label>
       </div>
 
       <div class="checkbox mb-3">
@@ -49,7 +51,7 @@
 <div class="gif"><!-- Place at bottom of page --></div>
 
   <!-- Javascript -->
-  <script type="text/javascript" src="<?php echo base_url('assets/vendor/jquery/jquery.js') ?>"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/login/login.js') ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/custom/loading.js') ?>"></script>
 

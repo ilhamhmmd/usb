@@ -20,7 +20,7 @@
                 array(
                     'field' => 'nik',
                     'label' => 'Nomor Induk Kependudukan',
-                    'rules' => 'required|callback_checkNIK|integer|is_unique[login.nik]'
+                    'rules' => 'required|is_unique[login.nik]|callback_checkNIK'
                 ),                
                 array(
                     'field' => 'email',
@@ -29,21 +29,22 @@
                 ),
                 array(
                     'field' => 'password',
-                    'label' => 'Kata Sandi',
-                    'rules' => 'required'
+                    'label' => 'Password',
+                    'rules' => 'required|min_length[6]'
                 ),
                 array(
                     'field' => 'password2',
-                    'label' => 'Konfirmasi Kata Sandi',
+                    'label' => 'Konfirmasi Password',
                     'rules' => 'required|matches[password]'
                 )
             );
 
             $this->form_validation->set_rules($validate_data);
             $this->form_validation->set_message('required', '{field} harus di isi');
-            $this->form_validation->set_message('is_unique', '{field} sudah teregistrasi');
-            $this->form_validation->set_message('integer', '{field} harus berupa digit angka');		
-            $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+            $this->form_validation->set_message('is_unique', '{field} sudah diregistrasi');
+            $this->form_validation->set_message('min_length', '{field} harus berisi minimal 6 karakter');
+            $this->form_validation->set_message('matches', '{field} harus sama dengan password');
+            $this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');
 
             if($this->form_validation->run() === true) {
 
@@ -73,9 +74,9 @@
 
         public function send_email_verification() {
             // retrieve data user (table login)
-            $user = $this->m_users->get_login('nik', $this->input->post('nik'));
+            $user = $this->m_users->get_user('nik', $this->input->post('nik'));
 
-            //set session
+            //set session            
             $_SESSION['data_user'] = $user['nik'];
 
             //passing post data dari view            
@@ -86,7 +87,10 @@
             $pekerjaan  = $user['pekerjaan'];            
             $email      = $this->input->post('email');
             $password   = $this->input->post('password');
-            $token      = $_SESSION['token'];            
+            $token      = $_SESSION['token'];
+
+            //ngambil nama user sebelum spasi
+            $preg = explode(" ", $user['nama']);
 
             // load library email
             $this->load->library('email');
@@ -108,55 +112,58 @@
             $this->email->initialize($config);
             $this->email->from($config['smtp_user']);
             $this->email->to($email);
-            $this->email->subject('Verifikasi Email');
+            $this->email->subject('Verifikasi Email | SIAP');
             $this->email->message(
-                "<p><b>Halo</b>, dibawah ini merupakan data anda berdasarkan E-KTP</p>
+                "<b>Halo $preg[0]</b>, dibawah ini merupakan data anda berdasarkan E-KTP
                 <br><br>
-                <table style='text-align:left;'>
-                    <tr>
-                        <th>NIK</th>
-                        <td>:</td>
-                        <td>$nik</td>
-                    </tr>
-                    <tr>
-                        <th>Nama</th>
-                        <td>:</td>
-                        <td>$nama</td>
-                    </tr>
-                    <tr>
-                        <th>Alamat</th>
-                        <td>:</td>
-                        <td>$alamat</td>
-                    </tr>
-                    <tr>
-                        <th>Jenis Kelamin</th>
-                        <td>:</td>
-                        <td>$j_kelamin</td>
-                    </tr>
-                    <tr>
-                        <th>Pekerjaan</th>
-                        <td>:</td>
-                        <td>$pekerjaan</td>
-                    </tr>
-                </table>
+                <div style='text-align:left;'>
+                    <table>
+                        <tr>
+                            <th>NIK</th>
+                            <td>:</td>
+                            <td>$nik</td>
+                        </tr>
+                        <tr>
+                            <th>Nama</th>
+                            <td>:</td>
+                            <td>$nama</td>
+                        </tr>
+                        <tr>
+                            <th>Alamat</th>
+                            <td>:</td>
+                            <td>$alamat</td>
+                        </tr>
+                        <tr>
+                            <th>Jenis Kelamin</th>
+                            <td>:</td>
+                            <td>$j_kelamin</td>
+                        </tr>
+                        <tr>
+                            <th>Pekerjaan</th>
+                            <td>:</td>
+                            <td>$pekerjaan</td>
+                        </tr>
+                    </table>
+                </div>
                 <br>
-                <p>Silahkan login dengan data berikut :</p>
-                <br>
-                <table style='text-align:left;'>
-                    <tr>
-                        <th>NIK</th>
-                        <td>:</td>
-                        <td>$nik</td>
-                    </tr>
-                    <tr>
-                        <th>Kata Sandi</th>
-                        <td>:</td>
-                        <td>$password</td>
-                    </tr>                
-                </table>
+                Silahkan login dengan data berikut :
                 <br><br>
-                Untuk melakukan verifikasi silahkan mengklik link berikut <a href='http://localhost/bismillah/verify/$email/$token' target='_blank'>Konfirmasi Email.</a><br><br> Atau jika tidak bisa silahkan klik http://localhost/bismillah/verify/$email/$token <br>
-                <small><code>Setelah anda masuk ke link berikut, sudah otomatis terverifikasi dan silahkan login dengan data diatas</code></small>"
+                <div style='text-align:left;'>
+                    <table>
+                        <tr>
+                            <th>NIK</th>
+                            <td>:</td>
+                            <td>$nik</td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <td>:</td>
+                            <td>$password</td>
+                        </tr>                
+                    </table>
+                </div>
+                <hr>
+                Untuk melakukan verifikasi silahkan mengklik link berikut <a href='http://localhost/bismillah/verify/$email/$token' target='_blank'>Konfirmasi Email.</a> dan login dengan data di atas<br>"
             );
             
             $this->email->send();
@@ -168,11 +175,11 @@
 
             //cek email
             if(!$user) {
-                die('email tidak ada');
+                redirect(base_url());
             }
 
             if($user['token'] !== $token) {
-                die('token tidak cocok');
+                redirect(base_url());
             }
             
             //update role user

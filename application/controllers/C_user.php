@@ -10,7 +10,9 @@
 
         public function index() {
             $data['user'] = $this->m_users->get_user('nik', $_SESSION['loginUser']);
-            $this->load->view('dashboard/dashboard_user', $data);
+            $this->load->view('dashboard_user/header');
+            $this->load->view('dashboard_user/body', $data);
+            $this->load->view('dashboard_user/footer');
         }
     }
 ?>

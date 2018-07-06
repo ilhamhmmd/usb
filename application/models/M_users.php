@@ -86,6 +86,14 @@
             return true;
         }
 
+        public function loginAdminMaster() {
+            if(!isset($_SESSION['loginAdminMaster'])) {
+                return false;
+            }
+    
+            return true;
+        }
+
         public function verified() {
             if(!isset($_SESSION['verified'])) {
                 return false;

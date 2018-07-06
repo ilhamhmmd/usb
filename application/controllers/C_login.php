@@ -6,6 +6,9 @@ class C_login extends CI_Controller {
     public function __construct() {
         parent::__construct();        
         $this->load->model('m_users');
+        if(!$this->m_users->login()) {
+            redirect('login');			
+        }
     }
 
 	public function index()	{
@@ -24,7 +27,7 @@ class C_login extends CI_Controller {
             ),
             array(
                 'field' => 'password',
-                'label' => 'Kata Sandi',
+                'label' => 'Password',
                 'rules' => 'required|callback_checkPassword'
             )
         );
@@ -32,7 +35,7 @@ class C_login extends CI_Controller {
         $this->form_validation->set_rules($validate_data);
         $this->form_validation->set_message('required', '{field} harus di isi');        
         $this->form_validation->set_message('integer', '{field} harus berupa digit angka');		
-        $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+        $this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');
 
         if($this->form_validation->run() === true) {
 
@@ -40,7 +43,7 @@ class C_login extends CI_Controller {
             $user = $this->m_users->get_login('nik', $this->input->post('nik'));
             $admin = $this->m_users->get_loginAdmin('id_admin', $this->input->post('nik'));
 
-            //dashboard user
+            //dashboard users
             if($user['role'] == 1) {
                 //set session
                 $_SESSION['data_user'] = $user['nik'];
@@ -75,6 +78,13 @@ class C_login extends CI_Controller {
 
                 $validator['success'] = true;
                 $validator['messages'] = 'c_admin';
+            } elseif($admin['role'] == 5) {
+                $_SESSION['data_admin'] = $admin['id_admin'];
+                $_SESSION['loginAdminMaster'] = true;
+                $_SESSION['loginAdmin'] = true;
+
+                $validator['success'] = true;
+                $validator['messages'] = 'c_admin';
             }
         } 
         else {
@@ -90,7 +100,7 @@ class C_login extends CI_Controller {
     public function checkRole($nik) {
         $user = $this->m_users->get_login('nik',$nik);
         if($user['role'] == 0) {
-            $this->form_validation->set_message('checkRole','{field} belum aktif');
+            $this->form_validation->set_message('checkRole','{field} belum terverifikasi, silahkan cek email/spam');
             return false;
         } else {
             return true;
@@ -119,7 +129,7 @@ class C_login extends CI_Controller {
             return false;
         }
         if(!$user) {
-            $this->form_validation->set_message('checkPassword','Kata Sandi anda salah');
+            $this->form_validation->set_message('checkPassword','{field} anda salah');
             return false;
         }
 

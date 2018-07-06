@@ -83,6 +83,7 @@ body, html {
 .container {
   margin-top  : 100px;
 }
+
 .asymmetric {
   position: relative;
   padding : 70px 30px;
@@ -116,6 +117,38 @@ transform-origin: bottom left;
   z-index: -10;
 }
 
+.asymmetric2{
+  position: relative;
+  padding : 70px 30px;
+  color   : white;
+}
+
+.asymmetric::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+background: -webkit-linear-gradient(to left, #141E30, #112233);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #141E30, #112233); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+transform-origin: bottom right;
+  transform: skewY(-3deg);
+  z-index: -10;
+}
+.asymmetric::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: -webkit-linear-gradient(to leftt,#141E30, #112233);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to leftt, #141E30, #112233); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+transform-origin: bottom right;
+  transform: skewY(3deg);
+  z-index: -10;
+}
 
 abbr[title],
 abbr[data-original-title] {
