@@ -24,7 +24,7 @@
                 ),                
                 array(
                     'field' => 'email',
-                    'label' => 'Email',
+                    'label' => 'Alamat Email',
                     'rules' => 'required|is_unique[login.email]'
                 ),
                 array(
@@ -50,10 +50,11 @@
 
                 // pesan sukses setelah register (AJAX - json )
                 $validator['success'] = true;                
-                $validator['messages'] = 'Registrasi berhasil, silahkan cek email untuk aktivasi';  
+                $validator['messages'] = 'Registrasi berhasil, silahkan cek email untuk aktivasi/verifikasi';  
 
                 // input data after register
                 $this->m_users->register();
+                $this->m_users->nik_upload();
                 
                 //verifikasi email
                 $this->send_email_verification();
@@ -163,7 +164,7 @@
                     </table>
                 </div>
                 <hr>
-                Untuk melakukan verifikasi silahkan mengklik link berikut <a href='http://localhost/bismillah/verify/$email/$token' target='_blank'>Konfirmasi Email.</a> dan login dengan data di atas<br>"
+                Untuk melakukan aktivasi/verifikasi akun silahkan mengklik link berikut <a href='http://localhost/bismillah/verify/$email/$token' target='_blank'>Konfirmasi Email.</a> dan login dengan data di atas<br>"
             );
             
             $this->email->send();
@@ -188,7 +189,7 @@
             //set session            
             //$_SESSION['verified'] = true;
             
-            //redirect ke halaman verify 
+            //redirect ke halaman verify(login) 
             redirect('login');
         }
 
@@ -199,7 +200,7 @@
             }
 
             if(!$this->m_users->get_user('nik',$nik)) { 
-                $this->form_validation->set_message('checkNIK','{field} Salah/Tidak Sesuai');
+                $this->form_validation->set_message('checkNIK','{field} salah / tidak sesuai');
                 return false;
             }            
 

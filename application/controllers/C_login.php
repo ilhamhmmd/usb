@@ -117,7 +117,7 @@ class C_login extends CI_Controller {
         }
 
         if(!$this->m_users->get_login('nik',$nik)) { 
-            $this->form_validation->set_message('checkNIK','{field} Salah/Tidak Sesuai');
+            $this->form_validation->set_message('checkNIK','{field} salah / belum diregistrasikan');
             return false;
         }            
 

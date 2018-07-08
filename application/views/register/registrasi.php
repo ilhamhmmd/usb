@@ -16,8 +16,8 @@
         
   </head>
 
-  <body>
- <div class="container py-5">
+ <body>
+ <div class="container mt-1 mb-5">
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center mb-5"><i class="fa fa-retweet" aria-hidden="true"></i> Formulir Registrasi</h2>
@@ -32,7 +32,7 @@
                             <form class="form" id="registerForm" method="post" action="c_registrasi/register">
                                 <div class="form-group">
                                     <label for="nik"><i class="fa fa-align-justify" aria-hidden="true"></i> NIK</label>
-                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Nomor Induk Kependudukan">
+                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Nomor Induk Kependudukan" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
@@ -45,10 +45,12 @@
                                 <div class="form-group">
                                     <label for="password2"><i class="fa fa-exchange" aria-hidden="true"></i> Konfirmasi Password</label>
                                     <input type="password" class="form-control" id="password2" name="password2" placeholder="Konfirmasi Password">
-                                </div>
+                                </div><br>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg float-right"><i class="fa fa-save" aria-hidden="true"></i> SUBMIT</button>
-                                </div>
+                                    <p class="float-right">Sudah terdaftar ? Silahkan <a class="font-weight-bold" href="<?php echo base_url('login') ?>">Login</a></p>
+                                    <button type="submit" class="btn btn-primary btn-lg float-left"><i class="fa fa-save" aria-hidden="true"></i> Registrasi</button>
+                                </div><br>
+                                <p class="mt-5 text-muted text-center">&copy; USB Smart City 2018</p>
                             </form>
                         </div>
                     </div>

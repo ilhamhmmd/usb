@@ -16,9 +16,15 @@
   </head>
 
   <body>
+  <div class="container" style="padding-top:5rem;">
+  <div class="col-md-6 mx-auto" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="card border-secondary">
+      <div class="warna card-header">
+        <h3 class="text-center" style="color : #fff;font-size: 20px">Login / Masuk</h3>
+      </div>
+    <div class="card-body">
     <form class="form-signin" action="c_login/login" method="post" id="loginForm">
-      <div class="text-center mb-4">
-        <h3 class="h2 mb-3 font-weight-bold">Login</h3>
+      <div class="text-center">        
 		    <img class="text-center" src="<?php echo base_url('assets/images/Man.png') ?>" alt="" width="90" height="90"><br>
         <a >Anda belum terdaftar ?</a><br>
 		    <a href="<?php echo base_url('registrasi') ?>">(klik disini)</a></p>      
@@ -43,9 +49,13 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Masuk</button>
       <p class="mt-5 mb-3 text-muted text-center">&copy; USB Smart City 2018</p>
     </form>
+    </div>
+    </div>
+    </div>
+    </div>
 
     <!-- loading gif -->
 <div class="gif"><!-- Place at bottom of page --></div>

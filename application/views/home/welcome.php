@@ -39,7 +39,7 @@
         <!-- Navigation Bar MENU -->
         <header>
           <nav class="navbar navbar-expand-lg navbar-light bg-light" id="home">
-                  <a class="navbar-brand" href="#"><i class="fa fa-home"></i>Beranda</a>
+                  <a class="navbar-brand" href="<?php echo base_url(); ?>"><i class="fa fa-home"></i>Beranda</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -61,7 +61,7 @@
                         <a class="nav-link js-scroll-trigger" href="#Announce"><i class="fa fa-bullhorn"></i> Status Pemohon</a>
                       </li>
                     </ul>
-                  <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Masuk</button>
+                  <a href="<?php echo base_url('login'); ?>"<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Masuk</button></a>
                   </form>
                   </div>
           </nav>
@@ -214,7 +214,7 @@
   <br>
       <div class="text-center" id=""> 
           <a href="<?php echo base_url('registrasi') ?>"><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-retweet" aria-hidden="true"></i> Daftar</button></a>
-          <button type="button" class="warna btn btn-secondary btn-lg"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Masuk</button>
+          <a href="<?php echo base_url('login') ?>"><button type="button" class="warna btn btn-secondary btn-lg"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Masuk</button></a>
       </div>
   <br>
     <div class="row-kotak text-center" id="">

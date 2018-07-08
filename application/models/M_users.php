@@ -37,7 +37,26 @@
                     'token'         => $_SESSION['token']
                 ];
     
-                $this->db->insert('login', $data);
+                $this->db->insert('login', $data);                
+        }
+
+        public function buat_ktp()	{            
+                
+                $data = [
+                    'nama'           => $this->input->post('nama'),
+                    'email'         => $this->input->post('email'),                    
+                    'alamat'      => $this->input->post('alamat')                    
+                ];
+    
+                $this->db->insert('ktp_baru', $data);                
+        }
+
+        public function nik_upload() {                          
+                $data = [
+                    'nik'           => $this->input->post('nik')
+                ];
+    
+                $this->db->insert('upload', $data);                
         }
 
         public function update_role($nik, $role_nr) {
