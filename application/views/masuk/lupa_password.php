@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Masuk</title>
+    <title>Lupa Pasword</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/login/bootstrap-4.1.1/dist/css/bootstrap.css') ?>" type="text/css">

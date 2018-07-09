@@ -43,9 +43,10 @@
         public function buat_ktp()	{            
                 
                 $data = [
-                    'nama'           => $this->input->post('nama'),
-                    'email'         => $this->input->post('email'),                    
-                    'alamat'      => $this->input->post('alamat')                    
+                    'nama'              => $this->input->post('nama'),
+                    'nik'               => $this->input->post('nik'),
+                    'alamat'            => $this->input->post('alamat'),
+                    'keperluan_ktp'     => $this->input->post('keperluan')
                 ];
     
                 $this->db->insert('ktp_baru', $data);                

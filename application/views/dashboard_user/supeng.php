@@ -1,4 +1,5 @@
 
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
@@ -26,7 +27,7 @@
             <span class="nav-link-text">Upload File</span>
           </a>
         </li>
-			  <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Charts">
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="<?php echo base_url('user/buat_ktp'); ?>">
             <i class="fa fa-address-card-o"></i>
             <span class="nav-link-text">Buat KTP</span>
@@ -45,15 +46,15 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-file-text"></i>
             <span class="nav-link-text">Surat Menyurat</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
+          <ul class="sidenav-second-level" id="collapseComponents">
             <li>
               <a href="<?php echo base_url('user/suket'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Keterangan</a>
             </li>
-            <li>
+            <li class="nav-item active">
               <a href="<?php echo base_url('user/supeng'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Pengantar</a>
             </li>
           </ul>
@@ -86,74 +87,13 @@
         <li class="breadcrumb-item">
           <a href="<?php echo base_url('user'); ?>">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Buat KTP</li>
+        <li class="breadcrumb-item active">Panduan</li>
       </ol>
     <!-- /.container-fluid-->
     
-	<div class="container">	
-            <h3 class="font-weight-bold">Buat KTP</h3>
-            <hr>
-            <p class="font-weight-bold">Persyaratan pemohon pembuatan KTP baru :</p>
-            <ol>
-                <li>Sudah berumur setidaknya 17 tahun atau lebih.</li>
-                <li>Sudah mengupload berkas berupa Kartu Keluarga, KTP orang tua/wali pada laman <a href="<?php echo base_url('user/upload'); ?>">Upload File</a>.</li>
-                                
-            </ol>
-			
-	<div>
-            <br>
-        <div id="messages"></div>
-		<form id="buatKTP" method="post" action="<?php echo base_url(); ?>c_buatktp/buat">
-        
-        <div class="form-group">
-                                    <label for="nik"><i class="fa fa-align-justify" aria-hidden="true"></i> Nomor Induk Kependudukan</label>
-                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Contoh : 11101" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="fa fa-user" aria-hidden="true"></i> Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Contoh : Yono Murtado">
-                                </div>								
-                                <div class="form-group">
-                                    <label for="password"><i class="fa fa-map-marker" aria-hidden="true"></i> Alamat Lengkap</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Contoh : Jalan Akses UI Kelapa 2 RT/RW 06/02 No. 8">
-                                </div>                          
-                                <input type="text" class="form-control" value="Pembuatan KTP Baru" name="keperluan" id="keperluan" hidden>      
-                                <div class="form-group">                                    
-                                <button type="submit" class="btn btn-primary btn-lg float-right"> Submit</button>
-        </div><br>
-</form><br><br>
-<br>
+	<h3 class="font-weight-bold">Supeng</h3>
+    <hr>
 
-              <!-- /.content-wrapper-->
-<footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>&copy; USB Smart City 2018</small>
-        </div>
-      </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Anda akan Meninggalkan Halaman?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Pilih "Sign out" Jika anda benar akan meninggalkan halaman ini</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?php echo base_url('logout'); ?>">Sign out</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -169,9 +109,6 @@
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-charts.min.js"></script>
   </div>
-
-    <script src="<?php echo base_url(); ?>assets/dashboard/user/js/buat_ktp.js"></script>
-
 </body>
 
 </html>

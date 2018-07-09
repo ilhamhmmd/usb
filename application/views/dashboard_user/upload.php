@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>SIAP User Dashboard</title>
-  <!-- Bootstrap core CSS-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('assets/dashboard/user/css/sb-admin.css'); ?>" rel="stylesheet">
-</head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
@@ -52,13 +33,13 @@
           </a>
         </li>
 		 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="Panduan.html">
+          <a class="nav-link" href="<?php echo base_url('user/panduan'); ?>">
             <i class="fa fa-info-circle"></i>
             <span class="nav-link-text">Panduan</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="Index.html">
+          <a class="nav-link" href="<?php echo base_url('user/pengumuman'); ?>">
             <i class="fa fa-bullhorn"></i>
             <span class="nav-link-text">Pengumuman</span>
           </a>
@@ -70,10 +51,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="Suket.html"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Keterangan</a>
+              <a href="<?php echo base_url('user/suket'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Keterangan</a>
             </li>
             <li>
-              <a href="Supeng.html"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Pengantar</a>
+              <a href="<?php echo base_url('user/supeng'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Pengantar</a>
             </li>
           </ul>
         </li>
@@ -105,20 +86,36 @@
         <li class="breadcrumb-item">
           <a href="<?php echo base_url('user'); ?>">Dashboard</a>
         </li>        
-        <li class="breadcrumb-item active">Upload</li>
+        <li class="breadcrumb-item active">Upload File</li>
       </ol>
     <!-- /.container-fluid-->
 
-    <div class="text-center mb-4">
-        <h3 class="font-weight-bold h3 mb-3 font-weight-normal">Masukan Data</h3>
-        <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
-        <br>
-        <code>Contoh : KTP_0000001.pdf</code>
-        <br>
-        <a >Format simpan data harus sesuai contoh diatas dan wajib bertipe PDF berukuran kurang dari 2 MB</a>
-        <a >Anda butuh bantuan ?</a>
-        <a href="#">(klik disini)</a></p>
-    </div>
+    <h3 class="font-weight-bold" id="timeline">Upload File</h3>
+    <hr>
+    <div class="">
+
+    <div class="row">   
+
+      <div class="col-lg col-md">
+        <p class="font-weight-bold">Ketentuan upload berkas :</p>
+            <ol>
+                <li>File/Berkas yang diupload wajib bertipe <b>PDF</b>.</li>
+                <li>Berukuran tidak melebihi dari 2 MB.</li>
+                <li>Format nama file/berkas harus sesuai.</li>
+                <li><b>Opsional</b> ditujukan sebagai berkas penunjang lain yang dibutuhkan seperti SUrat Tanah, PBB atau NPWP.</li>
+            </ol><br>
+      </div>
+
+      <div class="col-lg col-md">
+        <p class="font-weight-bold">Ketentuan format nama :</p>
+            <ul>
+                <li><b>KTP/KK/Opsional_Nomor NIK.pdf </b><br>
+                <b>Contoh : </b>KTP_11108.pdf | KK_11108.pdf | Opsional_11108.pdf</li>
+            </ul><br>
+      </div>
+
+      </div>
+    
 
     <center>
     
@@ -127,8 +124,9 @@
     <div class="col-lg col-md col-sm mb-5">            
           <div class="card" style="background-color:#d9edf7;">                
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Upload KTP</h5>
+              <h5 class="card-title font-weight-bold"><i class="fa fa-id-card-o" aria-hidden="true"></i> Upload KTP</h5>
               <hr>
+              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_filektp" id="upload_filektp">      
                 <div id="messagesktp"></div>
                 <div class="form-signin" id="tampilktp"></div>
@@ -149,10 +147,11 @@
     
 
 <div class="col-lg col-md col-sm mb-5">            
-          <div class="card" style="background-color:#f7d9d9;">                
+          <div class="card" style="background-color:#d9edf7;">                
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Upload KK</h5>
+              <h5 class="card-title font-weight-bold"><i class="fa fa-paperclip" aria-hidden="true"></i> Upload KK</h5>
               <hr>
+              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_file" id="upload_filekk">      
                 <div id="messageskk"></div>
                 <div class="form-signin" id="tampilkk"></div>
@@ -171,10 +170,11 @@
       </div>
 
       <div class="col-lg col-md col-sm mb-5">            
-          <div class="card" style="background-color:#d9f7db;">                
+          <div class="card" style="background-color:#d9edf7;">                
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Upload Opsional</h5>
+              <h5 class="card-title font-weight-bold"><i class="fa fa-file-archive-o" aria-hidden="true"></i> Upload Opsional</h5>
               <hr>
+              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_file" id="upload_fileopsi">      
                 <div id="messagesopsi"></div>
                 <div class="form-signin" id="tampilopsi"></div>
@@ -226,6 +226,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/uploadktp.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/uploadkk.js" type="text/javascript"></script>

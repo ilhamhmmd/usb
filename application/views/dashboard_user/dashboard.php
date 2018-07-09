@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>SIAP User Dashboard</title>
-  <!-- Bootstrap core CSS-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('assets/dashboard/user/css/sb-admin.css'); ?>" rel="stylesheet">
-</head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
@@ -52,13 +34,13 @@
           </a>
         </li>
 		 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="Panduan.html">
+          <a class="nav-link" href="<?php echo base_url('user/panduan'); ?>">
             <i class="fa fa-info-circle"></i>
             <span class="nav-link-text">Panduan</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="Index.html">
+          <a class="nav-link" href="<?php echo base_url('user/pengumuman'); ?>">
             <i class="fa fa-bullhorn"></i>
             <span class="nav-link-text">Pengumuman</span>
           </a>
@@ -70,10 +52,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="Suket.html"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Keterangan</a>
+              <a href="<?php echo base_url('user/suket'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Keterangan</a>
             </li>
             <li>
-              <a href="Supeng.html"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Pengantar</a>
+              <a href="<?php echo base_url('user/supeng'); ?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Surat Pengantar</a>
             </li>
           </ul>
         </li>

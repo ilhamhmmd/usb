@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class C_buat_ktp extends CI_Controller {
+    class C_buatktp extends CI_Controller {
 
         public function __construct() {
             parent::__construct();
@@ -13,13 +13,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             $validate_data = array(
                 array(
+                    'field' => 'nik',
+                    'label' => 'Nomor Induk Kependudukan',
+                    'rules' => 'required|max_length[5]|min_length[5]|is_unique[penduduk.nik]|integer'
+                ),
+                array(
                     'field' => 'nama',
                     'label' => 'Nama Lengkap',
-                    'rules' => 'required'
-                ),                
-                array(
-                    'field' => 'email',
-                    'label' => 'Alamat Email',
                     'rules' => 'required'
                 ),
                 array(
@@ -30,6 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             );
 
             $this->form_validation->set_rules($validate_data);
+            $this->form_validation->set_message('integer', '{field} harus berupa digit angka NIK (Sesuai KK)');
+            $this->form_validation->set_message('max_length', '{field} harus berisi 5 digit angka NIK (Sesuai KK)');
+            $this->form_validation->set_message('max_length', '{field} harus berisi 5 digit angka NIK (Sesuai KK)');
+            $this->form_validation->set_message('is_unique', '{field} yang dimasukkan telah terdaftar memiliki KTP');
             $this->form_validation->set_message('required', '{field} harus di isi');            
             $this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');
 
@@ -37,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 // pesan sukses setelah register (AJAX - json )
                 $validator['success'] = true;                
-                $validator['messages'] = 'Pembuatan data pemohon pembuatan KTP berhasil, lebih lanjut silahkan cek status pemhon secara berkala';  
+                $validator['messages'] = 'Data pemohon pembuatan KTP berhasil terkirim, lebih lanjut silahkan <b>Cek Status Pemohon</b> dalam 1x12 Jam';
 
                 // input data after input data pemohon
                 $this->m_users->buat_ktp();                          
@@ -53,6 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo json_encode($validator);
 
         }
+
+        
     }
 
 ?>

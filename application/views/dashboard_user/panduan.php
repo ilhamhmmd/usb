@@ -1,4 +1,5 @@
 
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
@@ -26,13 +27,13 @@
             <span class="nav-link-text">Upload File</span>
           </a>
         </li>
-			  <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Charts">
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="<?php echo base_url('user/buat_ktp'); ?>">
             <i class="fa fa-address-card-o"></i>
             <span class="nav-link-text">Buat KTP</span>
           </a>
         </li>
-		 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+		 <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="<?php echo base_url('user/panduan'); ?>">
             <i class="fa fa-info-circle"></i>
             <span class="nav-link-text">Panduan</span>
@@ -44,7 +45,7 @@
             <span class="nav-link-text">Pengumuman</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Surat Menyurat">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-file-text"></i>
             <span class="nav-link-text">Surat Menyurat</span>
@@ -86,49 +87,85 @@
         <li class="breadcrumb-item">
           <a href="<?php echo base_url('user'); ?>">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Buat KTP</li>
+        <li class="breadcrumb-item active">Panduan</li>
       </ol>
     <!-- /.container-fluid-->
     
-	<div class="container">	
-            <h3 class="font-weight-bold">Buat KTP</h3>
-            <hr>
-            <p class="font-weight-bold">Persyaratan pemohon pembuatan KTP baru :</p>
-            <ol>
-                <li>Sudah berumur setidaknya 17 tahun atau lebih.</li>
-                <li>Sudah mengupload berkas berupa Kartu Keluarga, KTP orang tua/wali pada laman <a href="<?php echo base_url('user/upload'); ?>">Upload File</a>.</li>
-                                
-            </ol>
-			
-	<div>
-            <br>
-        <div id="messages"></div>
-		<form id="buatKTP" method="post" action="<?php echo base_url(); ?>c_buatktp/buat">
-        
-        <div class="form-group">
-                                    <label for="nik"><i class="fa fa-align-justify" aria-hidden="true"></i> Nomor Induk Kependudukan</label>
-                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Contoh : 11101" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="fa fa-user" aria-hidden="true"></i> Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Contoh : Yono Murtado">
-                                </div>								
-                                <div class="form-group">
-                                    <label for="password"><i class="fa fa-map-marker" aria-hidden="true"></i> Alamat Lengkap</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Contoh : Jalan Akses UI Kelapa 2 RT/RW 06/02 No. 8">
-                                </div>                          
-                                <input type="text" class="form-control" value="Pembuatan KTP Baru" name="keperluan" id="keperluan" hidden>      
-                                <div class="form-group">                                    
-                                <button type="submit" class="btn btn-primary btn-lg float-right"> Submit</button>
-        </div><br>
-</form><br><br>
-<br>
-
-              <!-- /.content-wrapper-->
-<footer class="sticky-footer">
+    <!--TimelinePengumuman-->
+		<div class="container">
+  <div class="page-header">
+    <h3 class="font-weight-bold" id="timeline">Panduan</h3>
+    <hr><br>
+  </div>
+  <ul class="timeline">
+    <li>
+      <div class="timeline-badge"><i class="fa fa-desktop"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title font-weight-bold">Selamat Datang !</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Sistem Informasi Administrasi Penduduk adalah 
+		  sebuah web yang akan membantu anda melakukan pelayanan administrasi di bidang penduduk. mulai dari surat menyurat sampai dengan pembuatan KTP secara online</p>
+        </div>
+      </div>
+    </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge warning"><i class="fa fa-list"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title font-weight-bold">Administrasi Surat</h4>
+        </div>
+        <div class="timeline-body">
+          <p>lakukan pelayanan online langsung dari dashboard ini...</p>
+		  <p>Caranya, cukup dengan klik jenis pelayanan yang tersedia di menu di sebelah kiri, yaitu Surat Menyurat.
+		  isikan data dan keperluan anda dengan data yang sesuai. berikut jenis surat yang dpat di urus : </p><br>
+		  <a>1. Surat Keterangan</a>
+		  <p>2. Surat Pengantar</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-badge danger"><i class="fa fa-id-card"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title font-weight-bold">Pembuatan KTP</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Lakukan, permohonan pembuatan KTP baru untuk keluarga anda melalui web ini. dengan sekali mengklik menu pembuatan KTP.
+		  lakukan upload berkas pada menu Upload File</p>
+        </div>
+      </div>
+    </li>
+    <li class="timeline-inverted">
+	<div class="timeline-badge success"><i class="fa fa-upload"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title font-weight-bold">Upload File</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Untuk melakukan Upload file, pastikan anda memakai format yang sudah ditentukan. lakukan Scan berkas anda di kantor RT/RW lokasi anda tinggal</p>
+        </div>
+      </div>
+    </li>
+    <li class="timeline">
+	<div class="timeline-badge warning"><i class="fa fa-check-circle"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title font-weight-bold">Selesai...</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Setelah melakukan segala bentuk administrasi dalam web ini anda akan menerima informasi tentang status pelayanan anda melalui web ini kurang dari 12 jam</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>&copy; USB Smart City 2018</small>
+          <small>Copyright © Your Website 2018</small>
         </div>
       </div>
     </footer>
@@ -149,11 +186,12 @@
           <div class="modal-body">Pilih "Sign out" Jika anda benar akan meninggalkan halaman ini</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?php echo base_url('logout'); ?>">Sign out</a>
+            <a class="btn btn-primary" href="login.html">Sign out</a>
           </div>
         </div>
       </div>
     </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -169,9 +207,6 @@
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-charts.min.js"></script>
   </div>
-
-    <script src="<?php echo base_url(); ?>assets/dashboard/user/js/buat_ktp.js"></script>
-
 </body>
 
 </html>

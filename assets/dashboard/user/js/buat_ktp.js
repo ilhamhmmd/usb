@@ -11,11 +11,12 @@ $(document).ready(function() {
 				if(response.success == true) {
 					$("#messages").html('<div class="alert alert-success alert-dismissible" role="alert">'+
 					  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-					  response.messages+'</div>');
+					  response.messages+
+					'</div>');
 
 					$("#buatKTP")[0].reset();
 					$(".text-danger").remove();
-					$(".form-row").removeClass('has-error').removeClass('has-success');
+					$(".form-group").removeClass('has-error').removeClass('has-success');
 
 				}
 				else {
@@ -23,7 +24,7 @@ $(document).ready(function() {
 						var element = $("#"+index);
 
 						$(element)
-						.closest('.form-row')
+						.closest('.form-group')
 						.removeClass('has-error')
 						.removeClass('has-success')
 						.addClass(value.length > 0 ? 'has-error' : 'has-success')

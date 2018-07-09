@@ -7,6 +7,11 @@
             parent::__construct();
             
             $this->load->model('m_users');
+            if($this->m_users->loginUser()) {
+                redirect('user');			
+            } elseif($this->m_users->loginAdmin()) {
+                redirect('admin');			
+            }
     	}
 
         public function index() {
