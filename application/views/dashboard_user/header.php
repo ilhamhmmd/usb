@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SIAP User Dashboard</title>
+  <title><?php echo $title; ?></title>
   <!-- Bootstrap core CSS-->
-  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->

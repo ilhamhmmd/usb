@@ -12,32 +12,33 @@
             return $result;
         } */
 
-        function insert_filektp($file) {
+        function insert_filektp($file, $username) {
             $data = array(                
-                'ktp' => $file                
+                'ktp' => $file,
+                'username' => $username
             );            
-            
-            $result = $this->db->where('nik', $_SESSION['data_user']);
-            $result = $this->db->update('upload',$data);
+                        
+            $result = $this->db->insert('upload',$data);
             return $result;
         }
 
-        function insert_filekk($file) {
+        function insert_filekk($file, $username) {
             $data = array(                
-                'kk' => $file                
+                'kk' => $file,
+                'username' => $username                
             );            
             
-            $result = $this->db->where('nik', $_SESSION['data_user']);
-            $result = $this->db->update('upload',$data);
+            $result = $this->db->insert('upload',$data);
             return $result;
         }
 
-        function insert_fileopsi($file) {
+        function insert_fileopsi($file, $username) {
             $data = array(                
-                'opsional' => $file                
+                'opsional' => $file,
+                'username' => $username
             );            
-            $result = $this->db->where('nik', $_SESSION['data_user']);
-            $result = $this->db->update('upload',$data);
+            
+            $result = $this->db->insert('upload',$data);
             return $result;
         }
         

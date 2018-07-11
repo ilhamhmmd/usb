@@ -13,9 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             $validate_data = array(
                 array(
-                    'field' => 'nik',
+                    'field' => 'nik_pemohon',
                     'label' => 'Nomor Induk Kependudukan',
-                    'rules' => 'required|max_length[5]|min_length[5]|is_unique[penduduk.nik]|integer'
+                    'rules' => 'required|exact_length[18]|is_unique[warga.nik]|integer'
                 ),
                 array(
                     'field' => 'nama',
@@ -30,9 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             );
 
             $this->form_validation->set_rules($validate_data);
-            $this->form_validation->set_message('integer', '{field} harus berupa digit angka NIK (Sesuai KK)');
-            $this->form_validation->set_message('max_length', '{field} harus berisi 5 digit angka NIK (Sesuai KK)');
-            $this->form_validation->set_message('max_length', '{field} harus berisi 5 digit angka NIK (Sesuai KK)');
+            $this->form_validation->set_message('integer', '{field} harus berupa digit angka NIK (Sesuai KK)');            
             $this->form_validation->set_message('is_unique', '{field} yang dimasukkan telah terdaftar memiliki KTP');
             $this->form_validation->set_message('required', '{field} harus di isi');            
             $this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');

@@ -3,13 +3,11 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
-<?php
-      $sapa = explode(" ", $user['nama']); 
-?>
+
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $sapa[0]; ?></b></a>
+    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $user['username']; ?></b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -186,7 +184,7 @@
           <div class="modal-body">Pilih "Sign out" Jika anda benar akan meninggalkan halaman ini</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Sign out</a>
+            <a class="btn btn-primary" href="<?php echo base_url('logout'); ?>">Sign out</a>
           </div>
         </div>
       </div>

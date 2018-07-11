@@ -2,13 +2,11 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
-<?php
-      $sapa = explode(" ", $user['nama']); 
-?>
+
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $sapa[0]; ?></b></a>
+    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $user['username']; ?></b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -102,7 +100,7 @@
                 <li>File/Berkas yang diupload wajib bertipe <b>PDF</b>.</li>
                 <li>Berukuran tidak melebihi dari 2 MB.</li>
                 <li>Format nama file/berkas harus sesuai.</li>
-                <li><b>Opsional</b> ditujukan sebagai berkas penunjang lain yang dibutuhkan seperti SUrat Tanah, PBB atau NPWP.</li>
+                <li><b>Opsional</b> ditujukan sebagai berkas penunjang lain yang dibutuhkan seperti Surat Tanah, PBB atau NPWP.</li>
             </ol><br>
       </div>
 
@@ -126,16 +124,17 @@
             <div class="card-body">
               <h5 class="card-title font-weight-bold"><i class="fa fa-id-card-o" aria-hidden="true"></i> Upload KTP</h5>
               <hr>
-              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
+              <img class="text-center tilt" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_filektp" id="upload_filektp">      
                 <div id="messagesktp"></div>
                 <div class="form-signin" id="tampilktp"></div>
                 <br>
                 <div class="input-group justify-content-center">                
-                <label class="btn input-group-text">                
+                <label class="btn input-group-text">               
                 Pilih Berkas<input type="file" style="display: none;" name="ktp" id="ktp" onchange="showNameKTP()">
                 </label>
                 <div class="input-group-append">                
+                <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              
               </div>              
@@ -151,7 +150,7 @@
             <div class="card-body">
               <h5 class="card-title font-weight-bold"><i class="fa fa-paperclip" aria-hidden="true"></i> Upload KK</h5>
               <hr>
-              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
+              <img class="text-center tilt" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_file" id="upload_filekk">      
                 <div id="messageskk"></div>
                 <div class="form-signin" id="tampilkk"></div>
@@ -160,7 +159,8 @@
                 <label class="btn input-group-text">                
                 Pilih Berkas<input type="file" style="display: none;" name="kk" id="kk" onchange="showNameKK()">
                 </label>
-                <div class="input-group-append">                
+                <div class="input-group-append">
+                <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              
               </div>              
@@ -174,7 +174,7 @@
             <div class="card-body">
               <h5 class="card-title font-weight-bold"><i class="fa fa-file-archive-o" aria-hidden="true"></i> Upload Opsional</h5>
               <hr>
-              <img class="text-center" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
+              <img class="text-center tilt" src="<?php echo base_url(); ?>assets/images/Surat.png" alt="" width="90" height="90">
               <form class="form-signin" method="post" action="<?php echo base_url(); ?>c_upload/upload_file" id="upload_fileopsi">      
                 <div id="messagesopsi"></div>
                 <div class="form-signin" id="tampilopsi"></div>
@@ -183,7 +183,8 @@
                 <label class="btn input-group-text">                
                 Pilih Berkas<input type="file" style="display: none;" name="opsi" id="opsi" onchange="showNameOpsional()">
                 </label>
-                <div class="input-group-append">                
+                <div class="input-group-append">
+                <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              
               </div>              
@@ -265,7 +266,7 @@
 					  data.msg+
                     '</div>');
                     $("#upload_filektp")[0].reset();					
-                    $("#tampilktp").remove();
+                    $("#tampilktp").html("");
 				    } else  {
                         $("#messagesktp").html('<div class="alert alert-danger alert-dismissible" role="alert">'+
 					  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
@@ -301,7 +302,7 @@
 					  data.msg+
                     '</div>');
                     $("#upload_filekk")[0].reset();					
-                    $("#tampilkk").remove();
+                    $("#tampilkk").html("");
 				    } else  {
                         $("#messageskk").html('<div class="alert alert-danger alert-dismissible" role="alert">'+
 					  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
@@ -337,7 +338,7 @@
 					  data.msg+
                     '</div>');
                     $("#upload_fileopsi")[0].reset();
-                    $("#tampilopsi").remove();
+                    $("#tampilopsi").html("");
 				    } else  {
                         $("#messagesopsi").html('<div class="alert alert-danger alert-dismissible" role="alert">'+
 					  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+

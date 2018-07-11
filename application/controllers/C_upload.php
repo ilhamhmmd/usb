@@ -14,7 +14,7 @@
         public function upload_filektp() {
 
         $status = "";
-        $msg = "";
+        $msg = "";        
         $file_element_name = 'ktp';            
 
         if ($status != "error")
@@ -36,7 +36,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_filektp($data['file_name']);
+                $file_id = $this->m_uploads->insert_filektp($data['file_name'], $_POST['username']);
                 if($file_id)
                 {
                     $status = "success";
@@ -79,7 +79,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_filekk($data['file_name']);
+                $file_id = $this->m_uploads->insert_filekk($data['file_name'], $_POST['username']);
                 if($file_id)
                 {
                     $status = "success";
@@ -122,7 +122,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_fileopsi($data['file_name']);
+                $file_id = $this->m_uploads->insert_fileopsi($data['file_name'], $_POST['username']);
                 if($file_id)
                 {
                     $status = "success";

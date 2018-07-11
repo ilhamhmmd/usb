@@ -3,19 +3,17 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
-<?php
-      $sapa = explode(" ", $user['nama']); 
-?>
+
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $sapa[0]; ?></b></a>
+    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $user['username']; ?></b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="<?php echo base_url('user'); ?>">
             <i class="fa fa-fw fa-list"></i>
             <span class="nav-link-text">Dashboard</span>
@@ -39,7 +37,7 @@
             <span class="nav-link-text">Panduan</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="<?php echo base_url('user/pengumuman'); ?>">
             <i class="fa fa-bullhorn"></i>
             <span class="nav-link-text">Pengumuman</span>
@@ -87,13 +85,50 @@
         <li class="breadcrumb-item">
           <a href="<?php echo base_url('user'); ?>">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Panduan</li>
+        <li class="breadcrumb-item active">Pengumuman</li>
       </ol>
     <!-- /.container-fluid-->
     
-	<h3 class="font-weight-bold">Pengumuman</h3>
-    <hr>
+    <!--TimelinePengumuman-->
+		<div class="container">
+  <div class="page-header">
+    <h3 class="font-weight-bold" id="timeline">Pengumuman</h3>
+    <hr><br>
+  </div>
+  
+  <marquee behavior="" direction="vertical"><h1>Coming Soon</h1></marquee>
 
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Anda akan Meninggalkan Halaman?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Pilih "Sign out" Jika anda benar akan meninggalkan halaman ini</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="<?php echo base_url('logout'); ?>">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -76,7 +76,7 @@ body {
 hr {
   box-sizing: content-box;
   height: 0;
-  overflow: visible;
+  overflow: visible;  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -425,6 +425,10 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+hr.garis {  
+  border-top: 1px solid #ffffff;
 }
 
 .asymmetric {
@@ -6153,6 +6157,24 @@ button.close {
   vertical-align: text-top !important;
 }
 
+.warna{
+	background-color: #112234;
+
+}
+
+body.bg { 
+    /* The image used */
+    background-image: url("http://localhost/bismillah/assets/registrasi/city_upload.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: cover;
+}
 .bg-primary {
   background-color: #007bff !important;
 }

@@ -11,16 +11,16 @@ $(document).ready(function() {
 				if(response.success == true) {
                     $("#loginForm")[0].reset();
 					$(".text-danger").remove();
-					$(".form-label-group").removeClass('has-error').removeClass('has-success');
+					$(".form-group").removeClass('has-error').removeClass('has-success');
 
 					window.location = response.messages;					
-				} 
+				}
 				else {
 					$.each(response.messages, function(index, value) {
 						var element = $("#"+index);
 
 						$(element)
-						.closest('.form-label-group')
+						.closest('.form-group')
 						.removeClass('has-error')
 						.removeClass('has-success')
 						.addClass(value.length > 0 ? 'has-error' : 'has-success')

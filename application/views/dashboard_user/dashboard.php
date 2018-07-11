@@ -3,13 +3,10 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
-<?php
-      $sapa = explode(" ", $user['nama']); 
-?>
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $sapa[0]; ?></b></a>
+    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $user['username']; ?></b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -99,17 +96,19 @@
 						<img class="" src="<?php echo base_url(); ?>assets/dashboard/user/images/welcome.png" alt="Generic Placeholder image" width="100%" height="100%"/>
 				</div>
 			</div>
-	</div><br>
-	 <div class="container text-left">
-	 	<h5 class="text-center font-weight-bold">Anda Masuk Sebagai :</h5><br>
+  </div><br>
+  
+	 <div class="text-left">
+     <h5 class="text-center font-weight-bold">Anda Masuk Sebagai :</h5><br>
+      <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>NIK</th>
                   <th>Nama</th>
                   <th>Alamat</th>
-                  <th>Kelamin</th>
-                  <th>Pekerjaan</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Email</th>
                 </tr>
               </thead>
               <tbody>
@@ -118,9 +117,11 @@
                   <td><?= $user['nama'] ?></td>
                   <td><?= $user['alamat'] ?></td>
                   <td><?= $user['jenis_kelamin'] ?></td>
-                  <td><?= $user['pekerjaan'] ?></td>
+                  <td><?= $user['email'] ?></td>
                 </tr>
               </tbody>
+            </table>
+      </div>
               <!-- /.content-wrapper-->
 <footer class="sticky-footer">
       <div class="container">

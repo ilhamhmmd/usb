@@ -2,13 +2,10 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Buat sapa nama -->
-<?php
-      $sapa = explode(" ", $user['nama']); 
-?>
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $sapa[0]; ?></b></a>
+    <a class="navbar-brand" href=#><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> User | <b><?= $user['username']; ?></b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -93,7 +90,7 @@
 	<div class="container">	
             <h3 class="font-weight-bold">Buat KTP</h3>
             <hr>
-            <p class="font-weight-bold">Persyaratan pemohon pembuatan KTP baru :</p>
+            <p class="font-weight-bold">Persyaratan pemohon pembuatan KTP baru :</p>            
             <ol>
                 <li>Sudah berumur setidaknya 17 tahun atau lebih.</li>
                 <li>Sudah mengupload berkas berupa Kartu Keluarga, KTP orang tua/wali pada laman <a href="<?php echo base_url('user/upload'); ?>">Upload File</a>.</li>
@@ -107,7 +104,7 @@
         
         <div class="form-group">
                                     <label for="nik"><i class="fa fa-align-justify" aria-hidden="true"></i> Nomor Induk Kependudukan</label>
-                                    <input type="text" class="form-control" id="nik" name="nik" placeholder="Contoh : 11101" autofocus>
+                                    <input type="text" class="form-control" id="nik_pemohon" name="nik_pemohon" placeholder="Contoh : 11101" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label for="email"><i class="fa fa-user" aria-hidden="true"></i> Nama Lengkap</label>
@@ -118,6 +115,7 @@
                                     <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Contoh : Jalan Akses UI Kelapa 2 RT/RW 06/02 No. 8">
                                 </div>                          
                                 <input type="text" class="form-control" value="Pembuatan KTP Baru" name="keperluan" id="keperluan" hidden>      
+                                <input type="text" class="form-control" value="<?php echo $user['username']; ?>" name="username" id="username" hidden>      
                                 <div class="form-group">                                    
                                 <button type="submit" class="btn btn-primary btn-lg float-right"> Submit</button>
         </div><br>
