@@ -30,14 +30,33 @@
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                           Gunakan Username & Password yang telah anda registrasikan sebelumnya !
                         </div>
-                        <p class="float-right">Belum terdaftar ? <a href="<?php echo base_url('registrasi'); ?>">Registrasi</a></p><br>
-                        <hr><br>
+
+                        <div class="row">
+      
+                                <div class="col-lg col-md col-sm">
+                                <div class="float-left">
+                                <p class="float-right font-weight-bold" style="font-size:20px;"><a href="<?php echo base_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i> Beranda</a></p><br>
+                                </div>
+                                </div>
+                                
+                                <div class="col-lg col-md col-sm">
+                                <div class="float-right">
+                                    
+                                    <p class="float-right">Belum terdaftar ? <a href="<?php echo base_url('registrasi'); ?>">Registrasi</a></p><br>
+                                    
+                                </div>
+                                </div>
+                                
+
+                            </div><hr>
+                        
+                        
                         
                             <form class="form-signin" action="<?php echo base_url(); ?>c_login/login" method="post" id="loginForm">
                                                         
                                 <div class="form-group">
                                     <label for="username"><i class="fa fa-user-circle" aria-hidden="true"></i> Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" autofocus>
                                 </div>
                                 								
                                 <div class="form-group">

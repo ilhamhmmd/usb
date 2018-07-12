@@ -96,7 +96,61 @@
     <hr><br>
   </div>
   
-  <marquee behavior="" direction="vertical"><h1>Coming Soon</h1></marquee>
+  
+
+  <!-- Section tracking proposal -->
+  <section id="tracking">
+      <div class="container">
+
+      <div class="row">
+          <div class="col-lg col-md col-sm text-left">
+            <h3>Status Pengiriman Proposal<br></h3>            
+            <hr><br>
+          </div>          
+      </div>
+      
+        <div class="row">
+        <div class="table-responsive">
+          
+          <?php
+
+$htm .="<table border='1'>";
+    for ($i=0; $i<=1; $i++) 
+    {
+        $htm .="<tr>";
+        foreach ($suket->result() as $row)
+        {   
+            $htm .="<td >".$row->jenis_suket."</td>"; 
+            $j=0;
+            foreach($supeng->result() as $row1)
+            {
+                
+                    if ($j == $i)
+                    {
+                        $htm .="<td>".$row1->keperluan_supeng."</td></tr>"; 
+                    }
+                    $j++;
+
+            } 
+        }
+    }
+
+$htm .="</table>";
+echo $htm; ?>
+          <small class="text-danger">* Perlu diperhatikan :</small>
+          <small>
+            <ul>
+              <li><b class="text-success">Diterima</b>, menandakan proposal anda diterima oleh kami sepenuhnya</li>
+              <li><b class="text-warning">Pending</b>, menandakan proposal anda diterima oleh kami namun ada beberapa ketentuan yang belum terpenuhi</li>
+              <li><b class="text-danger">Ditolak</b>, menandakan proposal anda tidak kami terima dikarenakan tidak sesuai dengan ketentuan yang ada</li>
+            </ul>
+          </small>
+        </div>
+      </div>                    
+    </section>
+
+
+
 
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -143,6 +197,7 @@
     <!-- Custom scripts for this page-->
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-charts.min.js"></script>
+    
   </div>
 </body>
 

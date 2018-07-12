@@ -100,6 +100,7 @@
   </div><br>
    
   <div class = "container">
+  
 			<div class = "row text-center">
         
       <div class = "col-md-4 mb-5">
@@ -149,13 +150,14 @@
 				
 			</div>
     </div><br><br>
-  
 
+    
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+        
+        <small>&copy; USB Smart City 2018</small>
         </div>
       </div>
     </footer>
@@ -205,6 +207,7 @@
               <div class="form-group">
                 <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
                 <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>
+                <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
                 <label for="keperluanSKTM">Keperluan :</label><br>                
                 <textarea name="keperluanSKTM" id="keperluanSKTM" rows="10"></textarea>
               </div>              
@@ -234,7 +237,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" name="suket_kematian" value="Surat Keterangan Kematian" readonly>
               </div>
-              <label>Data Diri :</label><br>
+              <label>Data Kematian :</label><br>
               <small class="text-warning">Silahkan isi data diri (almarhum) dengan benar!</small>
               <div class="form-group">                
                 <input type="text" class="form-control" name="kematian_nik" id="kematian_nik" placeholder="Nomor NIK">
@@ -242,13 +245,16 @@
               <div class="form-group">                
                 <input type="text" name="kematian_nama" id="kematian_nama" class="form-control" placeholder="Nama Lengkap">
               </div>
-              <div class="form-group">                
+              <div class="form-group">
+              
               <input class="form-control" name="kematian_tanggal" id="kematian_tanggal" type="text" placeholder="Tanggal Kematian" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text', this.class='form-control'}">
               </div>
           </div>
+          
           <div class="modal-footer">
             <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
             <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>
+            <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
             <input type="submit" class="btn btn-primary float-right" value="Buat">
             </form>
@@ -285,6 +291,7 @@
           <div class="modal-footer">
             <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
             <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>
+            <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
             <input type="submit" class="btn btn-primary float-right" value="Buat">
             </form>
@@ -310,7 +317,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" name="suket_kelahiran" value="Surat Keterangan Kelahiran" readonly>
               </div>
-              <label>Data Usaha :</label><br>
+              <label>Data Kelahiran :</label><br>
               <small class="text-warning">Silahkan isi data anak anda dengan benar!</small>
               <div class="form-group">                
                 <input type="text" class="form-control" name="kelahiran_nama" id="kelahiran_nama" placeholder="Nama Lengkap">
@@ -329,9 +336,11 @@
                 <input class="form-control" name="kelahiran_tempat" id="kelahiran_tempat" type="text" placeholder="Tempat Lahir">
               </div>
           </div>
+          
           <div class="modal-footer">
             <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
             <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>
+            <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
             <input type="submit" class="btn btn-primary float-right" value="Buat">
             </form>

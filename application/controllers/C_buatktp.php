@@ -18,12 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     'rules' => 'required|exact_length[18]|is_unique[warga.nik]|integer'
                 ),
                 array(
-                    'field' => 'nama',
+                    'field' => 'nama_pemohon',
                     'label' => 'Nama Lengkap',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'alamat',
+                    'field' => 'alamat_pemohon',
                     'label' => 'Alamat Lengkap',
                     'rules' => 'required'
                 )

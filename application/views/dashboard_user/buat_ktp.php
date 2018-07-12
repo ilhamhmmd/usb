@@ -94,6 +94,7 @@
             <ol>
                 <li>Sudah berumur setidaknya 17 tahun atau lebih.</li>
                 <li>Sudah mengupload berkas berupa Kartu Keluarga, KTP orang tua/wali pada laman <a href="<?php echo base_url('user/upload'); ?>">Upload File</a>.</li>
+                <li>Pengisian data diri dibawah ini merupakan data pemohon baik anda ataupun keluarga anda.</li>
                                 
             </ol>
 			
@@ -104,17 +105,19 @@
         
         <div class="form-group">
                                     <label for="nik"><i class="fa fa-align-justify" aria-hidden="true"></i> Nomor Induk Kependudukan</label>
-                                    <input type="text" class="form-control" id="nik_pemohon" name="nik_pemohon" placeholder="Contoh : 11101" autofocus>
+                                    <input type="text" class="form-control" id="nik_pemohon" name="nik_pemohon" placeholder="Contoh : 367400110219980001" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label for="email"><i class="fa fa-user" aria-hidden="true"></i> Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Contoh : Yono Murtado">
+                                    <input type="text" class="form-control" name="nama_pemohon" id="nama_pemohon" placeholder="Contoh : Yono Murtado">
                                 </div>								
                                 <div class="form-group">
                                     <label for="password"><i class="fa fa-map-marker" aria-hidden="true"></i> Alamat Lengkap</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Contoh : Jalan Akses UI Kelapa 2 RT/RW 06/02 No. 8">
-                                </div>                          
-                                <input type="text" class="form-control" value="Pembuatan KTP Baru" name="keperluan" id="keperluan" hidden>      
+                                    <input type="text" class="form-control" id="alamat_pemohon" name="alamat_pemohon" placeholder="Contoh : Jalan Akses UI Kelapa 2 RT/RW 06/02 No. 8 Kota Depok">
+                                </div>
+                                <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
+                                <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>
+                                <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
                                 <input type="text" class="form-control" value="<?php echo $user['username']; ?>" name="username" id="username" hidden>      
                                 <div class="form-group">                                    
                                 <button type="submit" class="btn btn-primary btn-lg float-right"> Submit</button>

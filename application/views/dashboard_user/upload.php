@@ -133,7 +133,9 @@
                 <label class="btn input-group-text">               
                 Pilih Berkas<input type="file" style="display: none;" name="ktp" id="ktp" onchange="showNameKTP()">
                 </label>
-                <div class="input-group-append">                
+                <div class="input-group-append">
+                <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
+                <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>                
                 <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              
@@ -160,6 +162,8 @@
                 Pilih Berkas<input type="file" style="display: none;" name="kk" id="kk" onchange="showNameKK()">
                 </label>
                 <div class="input-group-append">
+                <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
+                <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>                
                 <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              
@@ -184,6 +188,8 @@
                 Pilih Berkas<input type="file" style="display: none;" name="opsi" id="opsi" onchange="showNameOpsional()">
                 </label>
                 <div class="input-group-append">
+                <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
+                <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>                
                 <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>
                 <input type="submit" class="btn btn-primary" value="Upload">                
               </div>              

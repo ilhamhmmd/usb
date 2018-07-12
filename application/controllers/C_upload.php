@@ -36,7 +36,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_filektp($data['file_name'], $_POST['username']);
+                $file_id = $this->m_uploads->insert_filektp($data['file_name'], $_POST['username'], $_POST['nik'], $_POST['nama']);
                 if($file_id)
                 {
                     $status = "success";
@@ -79,7 +79,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_filekk($data['file_name'], $_POST['username']);
+                $file_id = $this->m_uploads->insert_filekk($data['file_name'], $_POST['username'], $_POST['nik'], $_POST['nama']);
                 if($file_id)
                 {
                     $status = "success";
@@ -122,7 +122,7 @@
             {
                 $data = $this->upload->data();
                 
-                $file_id = $this->m_uploads->insert_fileopsi($data['file_name'], $_POST['username']);
+                $file_id = $this->m_uploads->insert_fileopsi($data['file_name'], $_POST['username'], $_POST['nik'], $_POST['nama']);
                 if($file_id)
                 {
                     $status = "success";

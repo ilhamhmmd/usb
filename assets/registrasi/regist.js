@@ -11,7 +11,8 @@ $(document).ready(function() {
 				if(response.success == true) {
 					$("#messages").html('<div class="alert alert-success alert-dismissible" role="alert">'+
 					  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-					  response.messages+'</div>');
+					  response.messages+
+					'</div>');
 
 					$("#registerForm")[0].reset();
 					$(".text-danger").remove();

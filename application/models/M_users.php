@@ -29,7 +29,7 @@
                     'nama'          => $nama_lengkap,
                     'jenis_kelamin' => $this->input->post('gender'),
                     'alamat'        => $this->input->post('alamat'),
-                    'pekerjaan'        => $this->input->post('jobs'),
+                    'pekerjaan'     => $this->input->post('jobs'),
                     'nik'           => $this->input->post('nik'),
                     'username'      => $this->input->post('username'),
                     'email'         => $this->input->post('email'),
@@ -45,12 +45,13 @@
                 $data = [
                     'username'               => $this->input->post('username'),
                     'nama'              => $this->input->post('nama'),
-                    'nik_pemohon'       => $this->input->post('nik_pemohon'),
-                    'alamat'            => $this->input->post('alamat'),
-                    'keperluan'     => $this->input->post('keperluan')
+                    'nik'       => $this->input->post('nik'),
+                    'alamat_pemohon'            => $this->input->post('alamat_pemohon'),
+                    'nama_pemohon'     => $this->input->post('nama_pemohon'),
+                    'nik_pemohon'     => $this->input->post('nik_pemohon')
                 ];
     
-                $this->db->insert('buat_ktp', $data);                
+                $this->db->insert('supeng', $data);                
         }
 
         public function nik_upload() {                          
@@ -98,6 +99,8 @@
 
             $data = [                
                 'keperluan'          => $sktm,
+                'jenis_suket'       => $suket,
+                'username'          => $this->input->post('username'),
                 'nama'               => $this->input->post('nama'),
                 'nik'                => $this->input->post('nik')
             ];
@@ -112,9 +115,18 @@
             $tanggal = $this->input->post('kematian_tanggal');
             $suket_kematian = "<b>".$suket."</b> : Telah meninggal dengan nomor NIK <b>".$nik."</b> bernama <b>".$nama."</b> pada tanggal <b>".$tanggal."</b>";
 
+            
+
+            
+
             $data = [                
                 'keperluan'          => $suket_kematian,
+                'kematian_nama'          => $nama,
+                'kematian_nik'          => $nik,
+                'jenis_suket'       => $suket,
+                'kematian_tanggal'          => $tanggal, 
                 'nama'               => $this->input->post('nama'),
+                'username'          => $this->input->post('username'),
                 'nik'                => $this->input->post('nik')
             ];
 
@@ -129,7 +141,11 @@
 
             $data = [                
                 'keperluan'          => $suket_usaha,
+                'usaha_nama'        => $usaha,
+                'usaha_jenis'       => $jenis,
+                'jenis_suket'       => $suket,
                 'nama'               => $this->input->post('nama'),
+                'username'          => $this->input->post('username'),
                 'nik'                => $this->input->post('nik')
             ];
 
@@ -146,11 +162,29 @@
 
             $data = [                
                 'keperluan'          => $suket_kelahiran,
+                'jenis_suket'       => $suket,
+                'kelahiran_nama'    => $nama,
+                'kelahiran_jenkel'  => $jenkel,
+                'kelahiran_tempat'  => $tempat,
+                'kelahiran_tanggal' => $tanggal,
+                'username'          => $this->input->post('username'),
                 'nama'               => $this->input->post('nama'),
                 'nik'                => $this->input->post('nik')
             ];
 
             $this->db->insert('suket', $data);
+        }
+
+        function supeng() {
+
+            $data = [
+                'nama'               => $this->input->post('nama'),
+                'nik'                => $this->input->post('nik'),
+                'username'          => $this->input->post('username'),'username'          => $this->input->post('username'),
+                'keperluan_supeng'               => $this->input->post('keperluan_supeng')
+            ];
+
+            $this->db->insert('supeng', $data);
         }
 
     }

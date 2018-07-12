@@ -1,4 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title><?php echo $title; ?></title>
+  <!-- Bootstrap core CSS-->
+  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="<?php echo base_url(); ?>assets/dashboard/user/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="<?php echo base_url('assets/dashboard/user/css/sb-admin.css'); ?>" rel="stylesheet">
+</head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
@@ -112,7 +130,7 @@
       <div class="timeline-badge warning"><i class="fa fa-list"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title font-weight-bold">Administrasi Surat</h4>
+          <h4 class="timeline-title">Administrasi Surat</h4>
         </div>
         <div class="timeline-body">
           <p>lakukan pelayanan online langsung dari dashboard ini...</p>
@@ -127,7 +145,7 @@
       <div class="timeline-badge danger"><i class="fa fa-id-card"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title font-weight-bold">Pembuatan KTP</h4>
+          <h4 class="timeline-title">Pembuatan KTP</h4>
         </div>
         <div class="timeline-body">
           <p>Lakukan, permohonan pembuatan KTP baru untuk keluarga anda melalui web ini. dengan sekali mengklik menu pembuatan KTP.
@@ -139,7 +157,7 @@
 	<div class="timeline-badge success"><i class="fa fa-upload"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title font-weight-bold">Upload File</h4>
+          <h4 class="timeline-title">Upload File</h4>
         </div>
         <div class="timeline-body">
           <p>Untuk melakukan Upload file, pastikan anda memakai format yang sudah ditentukan. lakukan Scan berkas anda di kantor RT/RW lokasi anda tinggal</p>
@@ -150,7 +168,7 @@
 	<div class="timeline-badge warning"><i class="fa fa-check-circle"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title font-weight-bold">Selesai...</h4>
+          <h4 class="timeline-title">Selesai...</h4>
         </div>
         <div class="timeline-body">
           <p>Setelah melakukan segala bentuk administrasi dalam web ini anda akan menerima informasi tentang status pelayanan anda melalui web ini kurang dari 12 jam</p>

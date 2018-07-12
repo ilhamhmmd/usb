@@ -93,12 +93,30 @@
 <div class="page-header">
   <h3 class="font-weight-bold">Surat Pengantar</h3>
   <hr>
-</div><br>
+</div>
  
-<div class = "container">
-    <div class = "row text-center">
-      
-    <marquee behavior="" direction="vertical"><h1>Coming Soon</h1></marquee>
+<div class = "">
+<p class="font-weight-bold">Persyaratan pemohon pembuatan Surat Pengantar :</p>            
+            <ol>                
+                <li>Sudah mengupload berkas berupa Kartu Keluarga, KTP pada laman <a href="<?php echo base_url('user/upload'); ?>">Upload File</a>.</li>
+                <li>Mengisi form dengan keperluan yang jelas.</li>
+                                
+            </ol>
+    <div id="messages_supeng"></div>
+    <center>
+    <form class="form-signin" method="post" action="<?php echo base_url('c_supeng/supeng'); ?>" id="form_supeng">
+
+    <h6 class="text-left font-weight-bold">Keperluan :</h6>
+    <div class="form-group">
+      <input type="text" name="nik" id="nik" value="<?php echo $user['nik']; ?>" hidden>
+      <input type="text" name="nama" id="nama" value="<?php echo $user['nama']; ?>" hidden>      
+      <input type="username" name="username" id="username" value="<?php echo $user['username']; ?>" hidden>      
+      <textarea name="keperluan_supeng" id="keperluan_supeng" rows="10"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary float-right" value="Buat Surat Pengantar">
+
+    </form>
+    </center>  
       
       
     </div>
@@ -109,7 +127,7 @@
   <footer class="sticky-footer">
     <div class="container">
       <div class="text-center">
-        <small>Copyright © Your Website 2018</small>
+      <small>&copy; USB Smart City 2018</small>
       </div>
     </div>
   </footer>
@@ -311,7 +329,7 @@
   <script src="<?php echo base_url(); ?>assets/dashboard/user/js/sb-admin-charts.min.js"></script>
 </div>
 
-<script src="<?php echo base_url(); ?>assets/dashboard/user/js/suket.js"></script>
+<script src="<?php echo base_url(); ?>assets/dashboard/user/js/supeng.js"></script>
 
 <script src="<?php echo base_url('assets/vendor/tinymce/tinymce.min.js') ?>"></script>
 

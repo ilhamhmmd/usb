@@ -37,13 +37,15 @@
 
         public function panduan() {
             $data['user'] = $this->m_users->get_user('username', $_SESSION['data_user']);
-            $data['title'] = 'User Panduan';
-            $this->load->view('dashboard_user/header',$data);
+            $data['title'] = 'User Panduan';            
             $this->load->view('dashboard_user/panduan', $data);
         }
 
         public function pengumuman() {
             $data['user'] = $this->m_users->get_user('username', $_SESSION['data_user']);
+            $data['suket'] = $this->db->query("SELECT * FROM suket WHERE username='".$_SESSION['data_user']."'");
+            $data['supeng'] = $this->db->query("SELECT * FROM supeng WHERE username='".$_SESSION['data_user']."'");
+            
             $data['title'] = 'User Pengumuman';
             $this->load->view('dashboard_user/header',$data);
             $this->load->view('dashboard_user/pengumuman', $data);

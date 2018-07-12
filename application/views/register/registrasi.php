@@ -28,12 +28,13 @@
                         <div class="card-body">
                             <div id="messages"></div>
                             <form class="form-signin" action="<?php echo base_url(); ?>c_registrasi/register" method="post" id="registerForm">
+                            <center><p class="font-weight-bold" style="font-size:20px;"><a href="<?php echo base_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i> Beranda</a></p></center>
                             <p class="text-danger">Harap mengisi data registrasi dengan benar !</p><hr>
                             <label for="nama_depan"><i class="fa fa-user" aria-hidden="true"></i> Nama Lengkap</label>
                             <div class="row">                                
                                     <div class="col-lg col-md col-sm">
                                         <div class="form-group">                
-                                            <input type="text" class="form-control" id="nama_depan" name="nama_depan" placeholder="Nama Depan" autofocus>
+                                            <input type="text" class="form-control" id="nama_depan" name="nama_depan" placeholder="Nama Depan">
                                         </div>
                                     </div>
                                     <div class="col-lg col-md col-sm">
@@ -60,8 +61,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="jobs"><i class="fa fa-suitcase" aria-hidden="true"></i> Pekerjaan</label>
-                                    
-                                    <select class="form-control" name="jobs" id="jobs" onchange="if(this.options[this.selectedIndex].value=='customOption'){$('.jobs').show();,$('.jobs').focus();.this.selectedIndex='0';}">
+                                    <div id="batasan">
+                                    <select class="form-control pilih" name="jobs" id="jobs" onchange="if(this.options[this.selectedIndex].value=='customOption'){$('.other').show(); $('.other').removeAttr('disabled'); $('other').autofocus=autofocus; this.disabled=true; this.selectedIndex='0'; this.style.display='none';}">
                                             <option value="none" selected="selected">Pilih Pekerjaan</option>                                                 
                                             <option value="Pegawai Negeri Sipil">Pegawai Negeri Sipil</option>
                                             <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
@@ -70,7 +71,8 @@
                                             <option value="Polisi">Polisi</option>
                                             <option value="Belum/Tidak Bekerja">Belum/Tidak Bekerja</option>                                           
                                             <option value="customOption">Pekerjaan Lainnya</option>                                            
-                                        </select><input name="jobs" id="jobs" style="display:none;" class="form-control jobs" onblur="if(this.value==''){$('.jobs').hide();}">
+                                        </select><input name="jobs" class="form-control other" placeholder="Pekerjaan" id="jobs" style="display:none;" disabled="disabled" onblur="if(this.value==''){$('.pilih').show(); $('.pilih').removeAttr('disabled'); this.style.display='none'; this.autofocus; this.disabled=true;}" autofocus>
+                                        </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="username"><i class="fa fa-user-circle" aria-hidden="true"></i> Username</label>
@@ -116,46 +118,13 @@
     <script src="<?php echo base_url(); ?>assets/dashboard/user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/registrasi/regist.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/custom/loading.js') ?>"></script>  </body>
-        <script>
-
-       $(document).ready(function() {
-      
-        $("select").customComboBox({
-  
-            tipText : "Enter Your Value",
-  
-            tipClass : "mytipclass",
-  
-          allowed : /[A-Za-z0-9\$\.\s]/,
-  
-          notallowed : /[\&lt;\&gt;]/,
-  
-          index : 'last',
-  
-          isEditing : function(el, status, value) {
-              if (typeof window.console!='object') { return; }
-              console.info('Editing status changed to (', status, ') on ', el, ' combo box and the selected value is "', value, '"');
-          },
-          onKeyDown : function(el, character, fulltext) {
-              if (typeof window.console!='object') { return; }
-              console.info('The character (', character, ') was just typed into ', el, ' combo box and the complete text is now "', fulltext, '"');
-          },
-          onDelete : function(el, fulltext) {
-              if (typeof window.console!='object') { return; }
-              console.info('A character was deleted from ', el, ' combo box and the complete text is now "', fulltext, '"');
-          }
-          });
-          
-          $("form").find('input').on('click',function(e) {
-              var sel = $(e.currentTarget).prev('select');
-              var name = sel.attr('name').toUpperCase();
-              var val = sel.find('option:selected').val();
-              $("#result").text(name+" combo box value is " + val);
-          });
-          
-  
-      }); 
-
-        </script>
-
+<script>
+    function toggleField(hideObj,showObj){
+  hideObj.disabled=true;        
+  hideObj.style.display='none';
+  showObj.disabled=false;  
+  showObj.style.display='inline';
+  showObj.focus();
+}
+</script>
 </html>
